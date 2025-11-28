@@ -1,39 +1,145 @@
-<!-- INICIO DEL BANNER SEGURO (Versión Emojis - A prueba de bloqueos) -->
-<div style="width: 100%; max-width: 800px; margin: 20px auto; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
-    
-    <!-- ENLACE PRINCIPAL -->
-    <a href="https://cdcruzher.github.io/" target="_blank" style="display: block; text-decoration: none !important; background-color: #0f172a; background-image: radial-gradient(circle at 0% 0%, rgba(88, 28, 135, 0.4) 0%, transparent 50%), radial-gradient(circle at 100% 100%, rgba(49, 46, 129, 0.4) 0%, transparent 50%); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 24px; color: white !important; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); transition: transform 0.2s ease;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carlos David | Creative Apps</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Iconos -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            background: rgba(30, 41, 59, 0.9);
+            border-color: rgba(139, 92, 246, 0.5); /* Purple accent */
+            box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen relative overflow-x-hidden selection:bg-purple-500 selection:text-white">
+
+    <!-- Background Gradients -->
+    <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-purple-900/30 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-indigo-900/30 rounded-full blur-[120px]"></div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 py-12 md:py-20">
         
-        <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap; text-align: left;">
-            
-            <!-- LOGO COMPUESTO (EMOJIS SEGUROS) -->
-            <!-- Usamos Emojis porque WordPress NO los bloquea, a diferencia de los SVGs -->
-            <div style="width: 80px; height: 80px; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); background-color: #1e293b; flex-shrink: 0; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.3);">
-                <div style="display: flex; gap: 6px; margin-bottom: 2px;">
-                    <span style="font-size: 24px; line-height: 1; filter: drop-shadow(0 0 8px rgba(96, 165, 250, 0.5));">🎵</span>
-                    <span style="font-size: 24px; line-height: 1; filter: drop-shadow(0 0 8px rgba(192, 132, 252, 0.5));">✨</span>
+        <!-- Header -->
+        <header class="flex flex-col md:flex-row justify-between items-center mb-16 gap-6">
+            <div class="flex items-center gap-4">
+                <div class="h-16 w-16 rounded-2xl overflow-hidden border-2 border-slate-700 shadow-xl">
+                    <!-- Asegúrate de tener tu logo.jpg en la misma carpeta de este repositorio nuevo -->
+                    <img src="logo.jpg" alt="Logo" class="h-full w-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name=CD&background=6366f1&color=fff&size=128'">
                 </div>
-                <span style="font-size: 24px; line-height: 1; filter: drop-shadow(0 0 8px rgba(52, 211, 153, 0.5));">🧬</span>
-            </div>
-            
-            <!-- TEXTO -->
-            <div style="flex-grow: 1; min-width: 200px;">
-                <h2 style="font-size: 1.5rem; font-weight: 800; margin: 0 0 4px 0; color: white; line-height: 1.2;">
-                    Carlos David
-                </h2>
-                <div style="font-size: 0.9rem; color: #a78bfa; margin: 0 0 8px 0; font-family: monospace;">
-                    @cdcruzher | Desarrollador Creativo
-                </div>
-                <p style="font-size: 0.95rem; color: #cbd5e1; margin: 0; line-height: 1.5;">
-                    Explora mi portafolio interactivo de aplicaciones con <strong>Music Time Capsule</strong>, <strong>Gene to Music</strong> y <strong>Magic Master</strong>.
-                </p>
-                
-                <!-- BOTÓN SIMULADO -->
-                <div style="margin-top: 16px; display: inline-block; font-size: 0.85rem; font-weight: 600; color: #60a5fa; text-transform: uppercase; letter-spacing: 0.05em;">
-                    Ver Portafolio Interactivo <span style="font-size: 1.2em; vertical-align: middle;">&rarr;</span>
+                <div>
+                    <h1 class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
+                        Carlos David
+                    </h1>
+                    <a href="https://cdcruzher.com" target="_blank" class="text-sm text-purple-400 hover:text-purple-300 font-mono transition-colors">
+                        @cdcruzher
+                    </a>
                 </div>
             </div>
+            
+            <a href="https://www.paypal.com/donate/?business=6EN68NHUTM2KQ&no_recurring=0&item_name=Thanks+for+your+support+Amigo%21&currency_code=USD" target="_blank" class="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-full text-sm font-medium transition-all flex items-center gap-2 group">
+                <i data-lucide="heart" class="w-4 h-4 text-pink-500 group-hover:scale-110 transition-transform"></i>
+                Support Work
+            </a>
+        </header>
+
+        <!-- Intro -->
+        <div class="text-center max-w-2xl mx-auto mb-20">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
+                Interactive <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Experiments</span>
+            </h2>
+            <p class="text-slate-400 text-lg">
+                A collection of web-based tools exploring the intersection of music, genetics, and history. Built with modern web technologies.
+            </p>
         </div>
-    </a>
-</div>
-<!-- FIN DEL BANNER -->
+
+        <!-- Apps Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- App 1: Music Time Capsule -->
+            <a href="https://cdcruzher.github.io/efemerides-music/" target="_blank" class="glass-card rounded-3xl p-6 group cursor-pointer flex flex-col h-full relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <i data-lucide="calendar" class="w-24 h-24"></i>
+                </div>
+                <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4 text-blue-400 group-hover:text-blue-300 group-hover:scale-110 transition-all duration-300">
+                    <i data-lucide="music" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-slate-100">Music Time Capsule</h3>
+                <p class="text-slate-400 text-sm mb-6 flex-grow">
+                    Explore daily musical history. Discover album releases, births, and major events for any day of the year.
+                </p>
+                <div class="flex items-center text-sm font-medium text-blue-400 group-hover:translate-x-1 transition-transform">
+                    Launch App <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
+                </div>
+            </a>
+
+            <!-- App 2: Magic Master -->
+            <a href="https://cdcruzher.github.io/song-master/" target="_blank" class="glass-card rounded-3xl p-6 group cursor-pointer flex flex-col h-full relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <i data-lucide="sliders" class="w-24 h-24"></i>
+                </div>
+                <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mb-4 text-purple-400 group-hover:text-purple-300 group-hover:scale-110 transition-all duration-300">
+                    <i data-lucide="wand-2" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-slate-100">Magic Master</h3>
+                <p class="text-slate-400 text-sm mb-6 flex-grow">
+                    AI-powered audio mastering tool. Upload tracks, apply presets like "Pop" or "Lofi", and visualize waveforms.
+                </p>
+                <div class="flex items-center text-sm font-medium text-purple-400 group-hover:translate-x-1 transition-transform">
+                    Launch App <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
+                </div>
+            </a>
+
+            <!-- App 3: Gene to Music -->
+            <a href="https://cdcruzher.github.io/gene-to-music/" target="_blank" class="glass-card rounded-3xl p-6 group cursor-pointer flex flex-col h-full relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <i data-lucide="dna" class="w-24 h-24"></i>
+                </div>
+                <div class="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-4 text-emerald-400 group-hover:text-emerald-300 group-hover:scale-110 transition-all duration-300">
+                    <i data-lucide="activity" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-slate-100">Gene to Music</h3>
+                <p class="text-slate-400 text-sm mb-6 flex-grow">
+                    Convert DNA sequences into melodies. Select musical scales and instruments to sonify genetic data.
+                </p>
+                <div class="flex items-center text-sm font-medium text-emerald-400 group-hover:translate-x-1 transition-transform">
+                    Launch App <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-24 border-t border-slate-800 pt-8 text-center text-slate-500 text-sm">
+            <p>&copy; 2024 Carlos David Cruz Hernandez. All rights reserved.</p>
+            <div class="mt-4 flex justify-center gap-4">
+                <!-- QR Code Preview Small -->
+                <div class="w-20 h-20 bg-white p-1 rounded-lg">
+                    <a href="https://www.paypal.com/donate/?business=6EN68NHUTM2KQ&no_recurring=0&item_name=Thanks+for+your+support+Amigo%21&currency_code=USD" target="_blank">
+                        <img src="qrcode.jpg" class="w-full h-full object-contain" alt="Donate" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https%3A%2F%2Fwww.paypal.com%2Fdonate%2F%3Fbusiness%3D6EN68NHUTM2KQ%26no_recurring%3D0%26item_name%3DThanks%2Bfor%2Byour%2Bsupport%2BAmigo%21%26currency_code%3DUSD'">
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

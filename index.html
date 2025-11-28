@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carlos David | Creative Apps</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <!-- Iconos -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         body { font-family: 'Inter', sans-serif; }
@@ -19,14 +18,13 @@
         .glass-card:hover {
             transform: translateY(-5px);
             background: rgba(30, 41, 59, 0.9);
-            border-color: rgba(139, 92, 246, 0.5); /* Purple accent */
+            border-color: rgba(139, 92, 246, 0.5); /* Purple accent default hover */
             box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.3);
         }
     </style>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen relative overflow-x-hidden selection:bg-purple-500 selection:text-white">
 
-    <!-- Background Gradients -->
     <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10">
         <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-purple-900/30 rounded-full blur-[120px]"></div>
         <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-indigo-900/30 rounded-full blur-[120px]"></div>
@@ -34,11 +32,9 @@
 
     <div class="max-w-6xl mx-auto px-6 py-12 md:py-20">
         
-        <!-- Header -->
         <header class="flex flex-col md:flex-row justify-between items-center mb-16 gap-6">
             <div class="flex items-center gap-4">
                 <div class="h-16 w-16 rounded-2xl overflow-hidden border-2 border-slate-700 shadow-xl">
-                    <!-- Asegúrate de tener tu logo.jpg en la misma carpeta de este repositorio nuevo -->
                     <img src="logo.jpg" alt="Logo" class="h-full w-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name=CD&background=6366f1&color=fff&size=128'">
                 </div>
                 <div>
@@ -57,7 +53,6 @@
             </a>
         </header>
 
-        <!-- Intro -->
         <div class="text-center max-w-2xl mx-auto mb-20">
             <h2 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
                 Interactive <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Experiments</span>
@@ -67,10 +62,8 @@
             </p>
         </div>
 
-        <!-- Apps Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-            <!-- App 1: Music Time Capsule -->
             <a href="https://cdcruzher.github.io/efemerides-music/" target="_blank" class="glass-card rounded-3xl p-6 group cursor-pointer flex flex-col h-full relative overflow-hidden">
                 <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                     <i data-lucide="calendar" class="w-24 h-24"></i>
@@ -87,7 +80,6 @@
                 </div>
             </a>
 
-            <!-- App 2: Magic Master -->
             <a href="https://cdcruzher.github.io/song-master/" target="_blank" class="glass-card rounded-3xl p-6 group cursor-pointer flex flex-col h-full relative overflow-hidden">
                 <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                     <i data-lucide="sliders" class="w-24 h-24"></i>
@@ -104,7 +96,6 @@
                 </div>
             </a>
 
-            <!-- App 3: Gene to Music -->
             <a href="https://cdcruzher.github.io/gene-to-music/" target="_blank" class="glass-card rounded-3xl p-6 group cursor-pointer flex flex-col h-full relative overflow-hidden">
                 <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                     <i data-lucide="dna" class="w-24 h-24"></i>
@@ -121,16 +112,30 @@
                 </div>
             </a>
 
+            <a href="https://cdcruzher.github.io/rna-url-link/" target="_blank" class="glass-card rounded-3xl p-6 group cursor-pointer flex flex-col h-full relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <i data-lucide="network" class="w-24 h-24"></i>
+                </div>
+                <div class="w-12 h-12 bg-rose-500/20 rounded-xl flex items-center justify-center mb-4 text-rose-400 group-hover:text-rose-300 group-hover:scale-110 transition-all duration-300">
+                    <i data-lucide="link" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-slate-100">RNA Link Encoder</h3>
+                <p class="text-slate-400 text-sm mb-6 flex-grow">
+                    Encode information into biological sequences. Transform URLs and text into shareable RNA strings.
+                </p>
+                <div class="flex items-center text-sm font-medium text-rose-400 group-hover:translate-x-1 transition-transform">
+                    Launch App <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
+                </div>
+            </a>
+
         </div>
 
-        <!-- Footer -->
         <footer class="mt-24 border-t border-slate-800 pt-8 text-center text-slate-500 text-sm">
             <p>&copy; 2024 Carlos David Cruz Hernandez. All rights reserved.</p>
             <div class="mt-4 flex justify-center gap-4">
-                <!-- QR Code Preview Small -->
-                <div class="w-20 h-20 bg-white p-1 rounded-lg">
+                <div class="w-20 h-20 bg-white/10 backdrop-blur-sm border border-white/20 p-1 rounded-lg">
                     <a href="https://www.paypal.com/donate/?business=6EN68NHUTM2KQ&no_recurring=0&item_name=Thanks+for+your+support+Amigo%21&currency_code=USD" target="_blank">
-                        <img src="qrcode.jpg" class="w-full h-full object-contain" alt="Donate" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https%3A%2F%2Fwww.paypal.com%2Fdonate%2F%3Fbusiness%3D6EN68NHUTM2KQ%26no_recurring%3D0%26item_name%3DThanks%2Bfor%2Byour%2Bsupport%2BAmigo%21%26currency_code%3DUSD'">
+                        <img src="qrcode.jpg" class="w-full h-full object-contain rounded-md" alt="Donate" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https%3A%2F%2Fwww.paypal.com%2Fdonate%2F%3Fbusiness%3D6EN68NHUTM2KQ%26no_recurring%3D0%26item_name%3DThanks%2Bfor%2Byour%2Bsupport%2BAmigo%21%26currency_code%3DUSD'">
                     </a>
                 </div>
             </div>

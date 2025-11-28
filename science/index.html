@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carlos David | Science Labs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Iconos -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            background: rgba(30, 41, 59, 0.9);
+            border-color: rgba(16, 185, 129, 0.5); /* Emerald accent for Science */
+            box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen relative overflow-x-hidden selection:bg-emerald-500 selection:text-white">
+
+    <!-- Background Gradients (Shifted to cooler/science tones) -->
+    <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-emerald-900/20 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-cyan-900/20 rounded-full blur-[120px]"></div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 py-12 md:py-20">
+        
+        <!-- Header -->
+        <header class="flex flex-col md:flex-row justify-between items-center mb-16 gap-6">
+            <div class="flex items-center gap-4">
+                <div class="h-16 w-16 rounded-2xl overflow-hidden border-2 border-slate-700 shadow-xl">
+                    <img src="logo.jpg" alt="Logo" class="h-full w-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name=CD&background=10b981&color=fff&size=128'">
+                </div>
+                <div>
+                    <h1 class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
+                        Carlos David
+                    </h1>
+                    <a href="https://cdcruzher.com" target="_blank" class="text-sm text-emerald-400 hover:text-emerald-300 font-mono transition-colors">
+                        @cdcruzher
+                    </a>
+                </div>
+            </div>
+            
+            <a href="https://www.paypal.com/donate/?business=6EN68NHUTM2KQ&no_recurring=0&item_name=Thanks+for+your+support+Amigo%21&currency_code=USD" target="_blank" class="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-full text-sm font-medium transition-all flex items-center gap-2 group">
+                <i data-lucide="flask-conical" class="w-4 h-4 text-emerald-500 group-hover:scale-110 transition-transform"></i>
+                Support Research
+            </a>
+        </header>
+
+        <!-- Intro -->
+        <div class="text-center max-w-2xl mx-auto mb-20">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
+                Science & <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">Bio-Informatics</span>
+            </h2>
+            <p class="text-slate-400 text-lg">
+                Interactive tools for exploring genetics, biological data visualization, and molecular encoding.
+            </p>
+        </div>
+
+        <!-- Apps Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- App: GlnA Sunburst -->
+            <a href="https://cdcruzher.github.io/glna_sunbrst/" target="_blank" class="glass-card rounded-3xl p-6 group cursor-pointer flex flex-col h-full relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <i data-lucide="pie-chart" class="w-24 h-24"></i>
+                </div>
+                <div class="w-12 h-12 bg-orange-500/20 rounded-xl flex items-center justify-center mb-4 text-orange-400 group-hover:text-orange-300 group-hover:scale-110 transition-all duration-300">
+                    <i data-lucide="sun" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-slate-100">GlnA Sunburst</h3>
+                <p class="text-slate-400 text-sm mb-6 flex-grow">
+                    Interactive hierarchical visualization. Explore complex datasets using dynamic sunburst charts.
+                </p>
+                <div class="flex items-center text-sm font-medium text-orange-400 group-hover:translate-x-1 transition-transform">
+                    Launch App <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-24 border-t border-slate-800 pt-8 text-center text-slate-500 text-sm">
+            <p>&copy; 2024 Carlos David Cruz Hernandez. All rights reserved.</p>
+            <div class="mt-4 flex justify-center gap-4">
+                <div class="w-20 h-20 bg-white/10 backdrop-blur-sm border border-white/20 p-1 rounded-lg">
+                    <a href="https://www.paypal.com/donate/?business=6EN68NHUTM2KQ&no_recurring=0&item_name=Thanks+for+your+support+Amigo%21&currency_code=USD" target="_blank">
+                        <img src="qrcode.jpg" class="w-full h-full object-contain rounded-md" alt="Donate" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https%3A%2F%2Fwww.paypal.com%2Fdonate%2F%3Fbusiness%3D6EN68NHUTM2KQ%26no_recurring%3D0%26item_name%3DThanks%2Bfor%2Byour%2Bsupport%2BAmigo%21%26currency_code%3DUSD'">
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

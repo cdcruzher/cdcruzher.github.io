@@ -21,6 +21,12 @@
             border-color: rgba(139, 92, 246, 0.5); /* Purple accent default hover */
             box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.3);
         }
+        
+        /* Animation for when items appear */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen relative overflow-x-hidden selection:bg-purple-500 selection:text-white">
@@ -123,6 +129,23 @@
                     Launch App <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
                 </div>
             </a>
+            
+            <!-- NEW APP: Hidden by default (style="display:none"), appears only when filter is clicked -->
+            <a href="https://cdcruzher.github.io/music-scales/" target="_blank" class="glass-card rounded-3xl p-6 group cursor-pointer flex flex-col h-full relative overflow-hidden" style="display: none;">
+                <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <i data-lucide="music-2" class="w-24 h-24"></i>
+                </div>
+                <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center mb-4 text-amber-400 group-hover:text-amber-300 group-hover:scale-110 transition-all duration-300">
+                    <i data-lucide="mic-2" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-slate-100">Music Scales</h3>
+                <p class="text-slate-400 text-sm mb-6 flex-grow">
+                    Visual reference for musical scales. Explore different keys, modes, and intervals on a virtual fretboard or keyboard.
+                </p>
+                <div class="flex items-center text-sm font-medium text-amber-400 group-hover:translate-x-1 transition-transform">
+                    Launch App <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
+                </div>
+            </a>
 
             <a href="https://cdcruzher.github.io/rna-url-link/" target="_blank" class="glass-card rounded-3xl p-6 group cursor-pointer flex flex-col h-full relative overflow-hidden">
                 <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -162,7 +185,8 @@
             const musicUrls = [
                 "https://cdcruzher.github.io/efemerides-music/",
                 "https://cdcruzher.github.io/song-master/",
-                "https://cdcruzher.github.io/gene-to-music/"
+                "https://cdcruzher.github.io/gene-to-music/",
+                "https://cdcruzher.github.io/music-scales/" // New app URL included here
             ];
             
             const cards = document.querySelectorAll('.glass-card');
@@ -170,7 +194,9 @@
             cards.forEach(card => {
                 if (musicUrls.includes(card.href)) {
                     card.style.display = 'flex';
-                    // Add a tiny animation to show it was selected
+                    // Re-trigger animation
+                    card.style.animation = 'none';
+                    card.offsetHeight; /* trigger reflow */
                     card.style.animation = 'fadeIn 0.5s ease forwards';
                 } else {
                     card.style.display = 'none';
@@ -180,3 +206,4 @@
     </script>
 </body>
 </html>
+

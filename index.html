@@ -54,6 +54,12 @@
             </div>
             
             <div class="flex flex-wrap justify-center gap-3">
+                <!-- HOME BUTTON -->
+                <button onclick="showAll()" class="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 border border-slate-600 text-slate-300 hover:text-white rounded-full text-sm font-medium transition-all flex items-center gap-2 group cursor-pointer">
+                    <i data-lucide="home" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
+                    Home
+                </button>
+
                 <button onclick="filterMusic()" class="px-5 py-2.5 bg-slate-800/50 hover:bg-slate-700/50 border border-purple-500/30 text-purple-300 hover:text-purple-200 rounded-full text-sm font-medium transition-all flex items-center gap-2 group cursor-pointer">
                     <i data-lucide="music" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
                     Only Music Apps
@@ -130,7 +136,7 @@
                 </div>
             </a>
             
-            <!-- NEW APP: Hidden by default (style="display:none"), appears only when filter is clicked -->
+            <!-- Hidden by default, only shown in Music Filter -->
             <a href="https://cdcruzher.github.io/music-scales/" target="_blank" class="glass-card rounded-3xl p-6 group cursor-pointer flex flex-col h-full relative overflow-hidden" style="display: none;">
                 <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                     <i data-lucide="music-2" class="w-24 h-24"></i>
@@ -181,12 +187,34 @@
     <script>
         lucide.createIcons();
 
+        // UPDATED FUNCTION: Restores original state (4 apps visible, scales hidden)
+        function showAll() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            const cards = document.querySelectorAll('.glass-card');
+            
+            cards.forEach(card => {
+                // If it's the Music Scales app, hide it
+                if (card.href.includes("music-scales")) {
+                     card.style.display = 'none';
+                } else {
+                    // Show all others
+                    card.style.display = 'flex';
+                    
+                    // Reset animation
+                    card.style.animation = 'none';
+                    card.offsetHeight; /* trigger reflow */
+                    card.style.animation = 'fadeIn 0.5s ease forwards';
+                }
+            });
+        }
+
         function filterMusic() {
             const musicUrls = [
                 "https://cdcruzher.github.io/efemerides-music/",
                 "https://cdcruzher.github.io/song-master/",
                 "https://cdcruzher.github.io/gene-to-music/",
-                "https://cdcruzher.github.io/music-scales/" // New app URL included here
+                "https://cdcruzher.github.io/music-scales/"
             ];
             
             const cards = document.querySelectorAll('.glass-card');
@@ -206,4 +234,3 @@
     </script>
 </body>
 </html>
-

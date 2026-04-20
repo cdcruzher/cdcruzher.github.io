@@ -269,6 +269,23 @@
                 </div>
             </a>
 
+            <!-- NEW APP: Intervals Analyzer (Hidden by default, only shown in Music Filter) -->
+            <a href="https://cdcruzher.github.io/intervals-analyzer/" target="_blank" class="glass-card rounded-3xl p-6 group cursor-pointer flex flex-col h-full relative overflow-hidden" style="display: none;">
+                <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <i data-lucide="bar-chart-2" class="w-24 h-24"></i>
+                </div>
+                <div class="w-12 h-12 bg-fuchsia-500/20 rounded-xl flex items-center justify-center mb-4 text-fuchsia-400 group-hover:text-fuchsia-300 group-hover:scale-110 transition-all duration-300">
+                    <i data-lucide="activity" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-slate-100">Intervals Analyzer</h3>
+                <p class="text-slate-400 text-sm mb-6 flex-grow">
+                    Analyze and visualize musical intervals. Master the distance between notes for deeper music theory comprehension.
+                </p>
+                <div class="flex items-center text-sm font-medium text-fuchsia-400 group-hover:translate-x-1 transition-transform">
+                    Launch App <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
+                </div>
+            </a>
+
         </div>
 
         <footer class="mt-24 border-t border-slate-800 pt-8 text-center text-slate-500 text-sm">
@@ -294,7 +311,7 @@
             
             cards.forEach(card => {
                 // If it's exclusive to the music filter, hide it
-                if (card.href.includes("music-scales") || card.href.includes("musictranspositor")) {
+                if (card.href.includes("music-scales") || card.href.includes("musictranspositor") || card.href.includes("intervals-analyzer")) {
                       card.style.display = 'none';
                 } else {
                     card.style.display = 'flex';
@@ -311,7 +328,8 @@
                 "https://cdcruzher.github.io/song-master/",
                 "https://cdcruzher.github.io/gene-to-music/",
                 "https://cdcruzher.github.io/music-scales/",
-                "https://cdcruzher.github.io/musictranspositor/" // Modificación estabilizada
+                "https://cdcruzher.github.io/musictranspositor/",
+                "https://cdcruzher.github.io/intervals-analyzer/" // Integración de nuevo nodo
             ];
             
             const cards = document.querySelectorAll('.glass-card');

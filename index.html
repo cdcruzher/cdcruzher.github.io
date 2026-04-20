@@ -18,11 +18,10 @@
         .glass-card:hover {
             transform: translateY(-5px);
             background: rgba(30, 41, 59, 0.9);
-            border-color: rgba(139, 92, 246, 0.5); /* Purple accent default hover */
+            border-color: rgba(139, 92, 246, 0.5);
             box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.3);
         }
         
-        /* Animation for when items appear */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
@@ -54,7 +53,6 @@
             </div>
             
             <div class="flex flex-wrap justify-center gap-3">
-                <!-- HOME BUTTON -->
                 <button onclick="showAll()" class="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 border border-slate-600 text-slate-300 hover:text-white rounded-full text-sm font-medium transition-all flex items-center gap-2 group cursor-pointer">
                     <i data-lucide="home" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
                     Home
@@ -186,7 +184,7 @@
                 </div>
             </a>
 
-            <!-- NEW APP: Kelutral Translator -->
+            <!-- Kelutral Translator -->
             <a href="https://cdcruzher.github.io/Kelutral-translator-/" target="_blank" class="glass-card rounded-3xl p-6 group cursor-pointer flex flex-col h-full relative overflow-hidden">
                 <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                     <i data-lucide="message-circle" class="w-24 h-24"></i>
@@ -203,7 +201,7 @@
                 </div>
             </a>
 
-            <!-- NEW APP: Plan Together -->
+            <!-- Plan Together -->
             <a href="https://cdcruzher.github.io/plan-together/" target="_blank" class="glass-card rounded-3xl p-6 group cursor-pointer flex flex-col h-full relative overflow-hidden">
                 <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                     <i data-lucide="map" class="w-24 h-24"></i>
@@ -220,7 +218,7 @@
                 </div>
             </a>
 
-            <!-- NEW APP: LactaLife -->
+            <!-- LactaLife -->
             <a href="https://cdcruzher.github.io/lactalife/" target="_blank" class="glass-card rounded-3xl p-6 group cursor-pointer flex flex-col h-full relative overflow-hidden">
                 <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                     <i data-lucide="heart-handshake" class="w-24 h-24"></i>
@@ -254,6 +252,23 @@
                 </div>
             </a>
 
+            <!-- NEW APP: Music Transpositor (Hidden by default, only shown in Music Filter) -->
+            <a href="https://cdcruzher.github.io/musictranspositor/" target="_blank" class="glass-card rounded-3xl p-6 group cursor-pointer flex flex-col h-full relative overflow-hidden" style="display: none;">
+                <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <i data-lucide="arrow-up-down" class="w-24 h-24"></i>
+                </div>
+                <div class="w-12 h-12 bg-violet-500/20 rounded-xl flex items-center justify-center mb-4 text-violet-400 group-hover:text-violet-300 group-hover:scale-110 transition-all duration-300">
+                    <i data-lucide="music-3" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-slate-100">Music Transpositor</h3>
+                <p class="text-slate-400 text-sm mb-6 flex-grow">
+                    Transpose chords and melodies instantly. Adapt your music to any key with this interactive utility.
+                </p>
+                <div class="flex items-center text-sm font-medium text-violet-400 group-hover:translate-x-1 transition-transform">
+                    Launch App <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
+                </div>
+            </a>
+
         </div>
 
         <footer class="mt-24 border-t border-slate-800 pt-8 text-center text-slate-500 text-sm">
@@ -272,21 +287,17 @@
     <script>
         lucide.createIcons();
 
-        // UPDATED FUNCTION: Restores original state (now 7 visible apps, scales hidden)
         function showAll() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
             
             const cards = document.querySelectorAll('.glass-card');
             
             cards.forEach(card => {
-                // If it's the Music Scales app, hide it
-                if (card.href.includes("music-scales")) {
+                // If it's exclusive to the music filter, hide it
+                if (card.href.includes("music-scales") || card.href.includes("musictranspositor")) {
                       card.style.display = 'none';
                 } else {
-                    // Show all others
                     card.style.display = 'flex';
-                    
-                    // Reset animation
                     card.style.animation = 'none';
                     card.offsetHeight; /* trigger reflow */
                     card.style.animation = 'fadeIn 0.5s ease forwards';
@@ -299,7 +310,8 @@
                 "https://cdcruzher.github.io/efemerides-music/",
                 "https://cdcruzher.github.io/song-master/",
                 "https://cdcruzher.github.io/gene-to-music/",
-                "https://cdcruzher.github.io/music-scales/"
+                "https://cdcruzher.github.io/music-scales/",
+                "https://cdcruzher.github.io/musictranspositor/" // Modificación estabilizada
             ];
             
             const cards = document.querySelectorAll('.glass-card');
@@ -307,7 +319,6 @@
             cards.forEach(card => {
                 if (musicUrls.includes(card.href)) {
                     card.style.display = 'flex';
-                    // Re-trigger animation
                     card.style.animation = 'none';
                     card.offsetHeight; /* trigger reflow */
                     card.style.animation = 'fadeIn 0.5s ease forwards';

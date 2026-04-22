@@ -150,7 +150,6 @@
                 </div>
             </a>
 
-            <!-- World Cup Draw -->
             <a href="https://cdcruzher.github.io/Worldcup26-draw/" target="_blank" class="glass-card rounded-3xl p-6 group cursor-pointer flex flex-col h-full relative overflow-hidden">
                 <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                     <i data-lucide="trophy" class="w-24 h-24"></i>
@@ -167,7 +166,6 @@
                 </div>
             </a>
 
-            <!-- Site Manager -->
             <a href="https://cdcruzher.github.io/webpage-creator/" target="_blank" class="glass-card rounded-3xl p-6 group cursor-pointer flex flex-col h-full relative overflow-hidden">
                 <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                     <i data-lucide="layout" class="w-24 h-24"></i>
@@ -184,7 +182,6 @@
                 </div>
             </a>
 
-            <!-- Kelutral Translator -->
             <a href="https://cdcruzher.github.io/Kelutral-translator-/" target="_blank" class="glass-card rounded-3xl p-6 group cursor-pointer flex flex-col h-full relative overflow-hidden">
                 <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                     <i data-lucide="message-circle" class="w-24 h-24"></i>
@@ -201,7 +198,6 @@
                 </div>
             </a>
 
-            <!-- Plan Together -->
             <a href="https://cdcruzher.github.io/plan-together/" target="_blank" class="glass-card rounded-3xl p-6 group cursor-pointer flex flex-col h-full relative overflow-hidden">
                 <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                     <i data-lucide="map" class="w-24 h-24"></i>
@@ -218,7 +214,6 @@
                 </div>
             </a>
 
-            <!-- LactaLife -->
             <a href="https://cdcruzher.github.io/lactalife/" target="_blank" class="glass-card rounded-3xl p-6 group cursor-pointer flex flex-col h-full relative overflow-hidden">
                 <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                     <i data-lucide="heart-handshake" class="w-24 h-24"></i>
@@ -235,7 +230,6 @@
                 </div>
             </a>
 
-            <!-- Hidden by default, only shown in Music Filter -->
             <a href="https://cdcruzher.github.io/music-scales/" target="_blank" class="glass-card rounded-3xl p-6 group cursor-pointer flex flex-col h-full relative overflow-hidden" style="display: none;">
                 <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                     <i data-lucide="music-2" class="w-24 h-24"></i>
@@ -252,7 +246,6 @@
                 </div>
             </a>
 
-            <!-- NEW APP: Music Transpositor (Hidden by default, only shown in Music Filter) -->
             <a href="https://cdcruzher.github.io/musictranspositor/" target="_blank" class="glass-card rounded-3xl p-6 group cursor-pointer flex flex-col h-full relative overflow-hidden" style="display: none;">
                 <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                     <i data-lucide="arrow-up-down" class="w-24 h-24"></i>
@@ -269,7 +262,6 @@
                 </div>
             </a>
 
-            <!-- NEW APP: Intervals Analyzer (Hidden by default, only shown in Music Filter) -->
             <a href="https://cdcruzher.github.io/intervals-analyzer/" target="_blank" class="glass-card rounded-3xl p-6 group cursor-pointer flex flex-col h-full relative overflow-hidden" style="display: none;">
                 <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                     <i data-lucide="bar-chart-2" class="w-24 h-24"></i>
@@ -282,6 +274,22 @@
                     Analyze and visualize musical intervals. Master the distance between notes for deeper music theory comprehension.
                 </p>
                 <div class="flex items-center text-sm font-medium text-fuchsia-400 group-hover:translate-x-1 transition-transform">
+                    Launch App <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
+                </div>
+            </a>
+
+            <a href="https://cdcruzher.github.io/intervals-hack/" target="_blank" class="glass-card rounded-3xl p-6 group cursor-pointer flex flex-col h-full relative overflow-hidden" style="display: none;">
+                <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <i data-lucide="zap" class="w-24 h-24"></i>
+                </div>
+                <div class="w-12 h-12 bg-sky-500/20 rounded-xl flex items-center justify-center mb-4 text-sky-400 group-hover:text-sky-300 group-hover:scale-110 transition-all duration-300">
+                    <i data-lucide="target" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-slate-100">Intervals Hack</h3>
+                <p class="text-slate-400 text-sm mb-6 flex-grow">
+                    Gamified training for interval recognition. Accelerate your ear training and music theory application.
+                </p>
+                <div class="flex items-center text-sm font-medium text-sky-400 group-hover:translate-x-1 transition-transform">
                     Launch App <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
                 </div>
             </a>
@@ -310,13 +318,15 @@
             const cards = document.querySelectorAll('.glass-card');
             
             cards.forEach(card => {
-                // If it's exclusive to the music filter, hide it
-                if (card.href.includes("music-scales") || card.href.includes("musictranspositor") || card.href.includes("intervals-analyzer")) {
+                if (card.href.includes("music-scales") || 
+                    card.href.includes("musictranspositor") || 
+                    card.href.includes("intervals-analyzer") ||
+                    card.href.includes("intervals-hack")) {
                       card.style.display = 'none';
                 } else {
                     card.style.display = 'flex';
                     card.style.animation = 'none';
-                    card.offsetHeight; /* trigger reflow */
+                    card.offsetHeight; 
                     card.style.animation = 'fadeIn 0.5s ease forwards';
                 }
             });
@@ -329,7 +339,8 @@
                 "https://cdcruzher.github.io/gene-to-music/",
                 "https://cdcruzher.github.io/music-scales/",
                 "https://cdcruzher.github.io/musictranspositor/",
-                "https://cdcruzher.github.io/intervals-analyzer/" // Integración de nuevo nodo
+                "https://cdcruzher.github.io/intervals-analyzer/",
+                "https://cdcruzher.github.io/intervals-hack/" // Nuevo nodo estabilizado
             ];
             
             const cards = document.querySelectorAll('.glass-card');
@@ -338,7 +349,7 @@
                 if (musicUrls.includes(card.href)) {
                     card.style.display = 'flex';
                     card.style.animation = 'none';
-                    card.offsetHeight; /* trigger reflow */
+                    card.offsetHeight; 
                     card.style.animation = 'fadeIn 0.5s ease forwards';
                 } else {
                     card.style.display = 'none';

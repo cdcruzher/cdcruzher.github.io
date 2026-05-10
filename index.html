@@ -230,6 +230,7 @@
                 </div>
             </a>
 
+            <!-- Hidden by default, only shown in Music Filter -->
             <a href="https://cdcruzher.github.io/music-scales/" target="_blank" class="glass-card rounded-3xl p-6 group cursor-pointer flex flex-col h-full relative overflow-hidden" style="display: none;">
                 <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                     <i data-lucide="music-2" class="w-24 h-24"></i>
@@ -294,6 +295,23 @@
                 </div>
             </a>
 
+            <!-- NEW APP: Music Notation -->
+            <a href="https://cdcruzher.github.io/music-notation/" target="_blank" class="glass-card rounded-3xl p-6 group cursor-pointer flex flex-col h-full relative overflow-hidden" style="display: none;">
+                <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <i data-lucide="book-open" class="w-24 h-24"></i>
+                </div>
+                <div class="w-12 h-12 bg-yellow-500/20 rounded-xl flex items-center justify-center mb-4 text-yellow-400 group-hover:text-yellow-300 group-hover:scale-110 transition-all duration-300">
+                    <i data-lucide="pen-tool" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-slate-100">Music Notation</h3>
+                <p class="text-slate-400 text-sm mb-6 flex-grow">
+                    Interactive sheet music editor and notation tool. Compose, edit, and visualize musical scores dynamically.
+                </p>
+                <div class="flex items-center text-sm font-medium text-yellow-400 group-hover:translate-x-1 transition-transform">
+                    Launch App <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
+                </div>
+            </a>
+
         </div>
 
         <footer class="mt-24 border-t border-slate-800 pt-8 text-center text-slate-500 text-sm">
@@ -317,11 +335,19 @@
             
             const cards = document.querySelectorAll('.glass-card');
             
+            // Vector de exclusión refactorizado (O(1) legibilidad, O(n) ejecución limpia)
+            const exclusiveMusicUrls = [
+                "music-scales", 
+                "musictranspositor", 
+                "intervals-analyzer",
+                "intervals-hack",
+                "music-notation"
+            ];
+            
             cards.forEach(card => {
-                if (card.href.includes("music-scales") || 
-                    card.href.includes("musictranspositor") || 
-                    card.href.includes("intervals-analyzer") ||
-                    card.href.includes("intervals-hack")) {
+                const isExclusive = exclusiveMusicUrls.some(url => card.href.includes(url));
+                
+                if (isExclusive) {
                       card.style.display = 'none';
                 } else {
                     card.style.display = 'flex';
@@ -340,7 +366,8 @@
                 "https://cdcruzher.github.io/music-scales/",
                 "https://cdcruzher.github.io/musictranspositor/",
                 "https://cdcruzher.github.io/intervals-analyzer/",
-                "https://cdcruzher.github.io/intervals-hack/" // Nuevo nodo estabilizado
+                "https://cdcruzher.github.io/intervals-hack/",
+                "https://cdcruzher.github.io/music-notation/" // Nuevo nodo asimilado
             ];
             
             const cards = document.querySelectorAll('.glass-card');
@@ -359,3 +386,6 @@
     </script>
 </body>
 </html>
+
+
+```
